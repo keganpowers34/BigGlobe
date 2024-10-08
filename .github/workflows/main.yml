@@ -31,8 +31,16 @@ jobs:
 
       - name: Building AutoCodec First
         run: git clone --recursive https://github.com/Builderb0y/AutoCodec.git && cd AutoCodec && ./gradlew build && cd ..
+        
+      - name: Switch to Java 21 for BigGlobe
+        uses: actions/setup-java@4
+        with:
+          distribution: temurin
+          java-version: 21
+      
       - name: Execute Gradle build
         run: ./gradlew build
+
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
