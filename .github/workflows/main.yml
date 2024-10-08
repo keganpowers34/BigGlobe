@@ -33,7 +33,7 @@ jobs:
         run: git clone --recursive https://github.com/Builderb0y/AutoCodec.git && cd AutoCodec && ./gradlew build && cd ..
         
       - name: Switch to Java 21 for BigGlobe
-        uses: actions/setup-java@4
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
