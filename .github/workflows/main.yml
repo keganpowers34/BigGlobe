@@ -30,7 +30,7 @@ jobs:
           cache-read-only: false
 
       - name: Building AutoCodec First
-        run: git clone --recursive https://github.com/Builderb0y/AutoCodec.git && cd AutoCodedx && ./gradlew build && cd ..
+        run: git clone --recursive https://github.com/Builderb0y/AutoCodec.git && cd AutoCodec && ./gradlew build && cd ..
       - name: Execute Gradle build
         run: ./gradlew build
 
