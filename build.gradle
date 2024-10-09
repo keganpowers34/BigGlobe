@@ -76,7 +76,7 @@ dependencies() {
 	modImplementation "maven.modrinth:sodium:mc1.21-0.5.11"
 	modImplementation "maven.modrinth:lambdynamiclights:2.3.4+1.20.4"
 
-	modApi("me.shedaniel.cloth:cloth-config-fabric:ABC") {
+	modApi("me.shedaniel.cloth:cloth-config-fabric:15.0.140") {
         	exclude(group: "net.fabricmc.fabric-api")
     	}
 
