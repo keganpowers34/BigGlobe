@@ -69,6 +69,8 @@ dependencies() {
 
 	modImplementation "maven.modrinth:voxy:0.1.5-alpha"
 	modImplementation "maven.modrinth:distanthorizons:2.2.1-a-1.21.1"
+	modImplementation "maven.modrinth:immersiveportals:v6.0.3-mc1.21.1"
+	modImplementation "maven.modrinth:sodium:mc1.21-0.5.11"
 
 	modCompileOnly   (fileTree(file("dependencies/$project.minecraft_version/compileOnly"   )))
 	modImplementation(fileTree(file("dependencies/$project.minecraft_version/implementation")))
