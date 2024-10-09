@@ -68,7 +68,7 @@ dependencies() {
 	}
 
 	modImplementation "maven.modrinth:voxy:0.1.5-alpha"
-	modImplementation "maven.modrinth:distant-horizons:2.2.1-a-1.21.1"
+	modImplementation "maven.modrinth:distanthorizons:2.2.1-a-1.21.1"
 
 	modCompileOnly   (fileTree(file("dependencies/$project.minecraft_version/compileOnly"   )))
 	modImplementation(fileTree(file("dependencies/$project.minecraft_version/implementation")))
