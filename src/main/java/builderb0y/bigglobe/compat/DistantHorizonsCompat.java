@@ -120,10 +120,9 @@ public class DistantHorizonsCompat {
 				public void onLevelLoad(DhApiEventParam<EventParam> param) {
 					IDhApiLevelWrapper levelWrapper = param.value.levelWrapper;
 					if (levelWrapper.getWrappedMcObject() instanceof ServerWorld serverWorld) {
-						ChunkGenerator generator = serverWorld.getChunkManager().getChunkGenerator();
-						if (generator instanceof BigGlobeScriptedChunkGenerator chunkGenerator) {
+						if (serverWorld.getChunkManager().getChunkGenerator() instanceof BigGlobeScriptedChunkGenerator generator) {
 							if (BigGlobeConfig.INSTANCE.get().distantHorizonsIntegration.hyperspeedGeneration) {
-								DhApi.worldGenOverrides.registerWorldGeneratorOverride(levelWrapper, new DhScriptedWorldGenerator(levelWrapper, serverWorld, chunkGenerator));
+								DhApi.worldGenOverrides.registerWorldGeneratorOverride(levelWrapper, new DhScriptedWorldGenerator(levelWrapper, serverWorld, generator));
 							}
 							else {
 								BigGlobeMod.LOGGER.info("Not using hyperspeed DH world generator, as it is disabled in Big Globe's config file.");

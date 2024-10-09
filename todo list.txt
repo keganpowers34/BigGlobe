@@ -16,7 +16,6 @@ testing:
 		"chunky" is the one reported to me, and apparently it either
 		uses up a stupid amount of RAM, or has a memory leak.
 	test all hyperspace renderers (waypoints and dimension) with iris shader packs.
-	make sure glow lichen and small dungeons spawn in island caves.
 
 where I left off:
 	check if I can or should make delegating structures not spawn outside of big globe worlds.
@@ -25,34 +24,27 @@ where I left off:
 	remove column values which have been replaced by traits.
 		do islands need surface_temperature/foliage?
 		do islands need height_adjusted_temperature/foliage?
+	actual biomes for cave types?
 
 to finish before release:
-	document loading traits from multiple data packs.
-	document new "scale" alias for grids.
+	test terralith already.
 
 changelog:
-	# For regular players:
-	* Fixed nether fungi not growing into Big Globe trees when bonemealed.
-	* Some structures which spawn on top of lakes will now have hills below them instead of floating in mid-air.
-	* Some structures are now more likely to spawn in hilly areas.
-	* Fixed recipes involving balls of string.
-	* Reduced sounds from rivers again.
-	* Strongholds now generate below caves instead of inside caves.
-	* Fixed bug causing a bunch of images to be created in .minecraft/bigglobe_dependency_graphs when the config option which controls this is disabled.
-	* Fixed end crystals spawned during worldgen showing the base plate.
-	# For data pack makers:
-	* Scripts can now be declared in files in addition to being embedded in json.
-	* Scripts can now include code from multiple files.
-	* Chunk generators can now load world traits from files provided by multiple data packs.
+	* Sped up island generation some more (it'll be different on the border between old chunks and new chunks again).
+	* Some structures are now more common.
+	* Fixed crash with Ryoamic Lights (integration code won't work though).
+	* Possibly fixed compatibility with Flashback.
+	* Big Globe biomes are no longer in vanilla "has_structure" tags.
+		* This prevents modded structures which use those tags from spawning, but also makes it easier to support such structures with data packs.
+		* The only vanilla biome tag remaining is `#required_ocean_monument_surrounding`.
+		* All vanilla structures are now delegated and use Big Globe biome tags instead of vanilla biome tags.
 
 alternate world presets:
 	paradise.
 	islands:
-		features.
-		structures.
+		features:
+		structures:
 			prevent ancient cities from spawning in volcanoes.
-		clouds somewhere.
-		deal with ores in skylands.
 
 breaking changes I want to make:
 	better Purpose system.
@@ -232,6 +224,11 @@ scripting:
 			generic(type) type List(of: type) whatever(: body)
 		"expose" fastutil collection types.
 			List(of: int) will compile into IntList.
+	range in switch cases.
+		switch (x:
+			case (range[0, 5): body)
+			case (range[5, 10): body)
+		)
 
 features:
 	general:

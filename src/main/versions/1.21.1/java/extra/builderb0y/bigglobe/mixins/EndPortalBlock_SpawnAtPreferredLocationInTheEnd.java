@@ -32,7 +32,6 @@ public class EndPortalBlock_SpawnAtPreferredLocationInTheEnd {
 		);
 	}
 
-	//@ModifyArg can't capture target method parameters, so I'm using @ModifyExpressionValue instead.
 	@ModifyExpressionValue(method = "createTeleportTarget", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/BlockPos;down()Lnet/minecraft/util/math/BlockPos;"))
 	private BlockPos bigglobe_generatePlatformAtRequestedPosition(BlockPos original, @Local(ordinal = 1) ServerWorld destination, @Share("bigglobe_platformPosition") LocalRef<BlockPos> platformPosition) {
 		int[] position;

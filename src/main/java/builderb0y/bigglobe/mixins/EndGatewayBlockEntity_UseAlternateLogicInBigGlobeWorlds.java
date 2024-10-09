@@ -141,7 +141,8 @@ public class EndGatewayBlockEntity_UseAlternateLogicInBigGlobeWorlds {
 				search = new BlockPos.Mutable(),
 				found  = pos.mutableCopy().setY(world.getBottomY());
 			for (int offsetX = -searchRadius; offsetX <= searchRadius; offsetX++) {
-				innerSquare: for (int offsetZ = -searchRadius; offsetZ <= searchRadius; offsetZ++) {
+				innerSquare:
+				for (int offsetZ = -searchRadius; offsetZ <= searchRadius; offsetZ++) {
 					search.set(pos.getX() + offsetX, pos.getY(), pos.getZ() + offsetZ);
 					while (bigglobe_canSpawnOn(world, search)) {
 						search.setY(search.getY() + 1);

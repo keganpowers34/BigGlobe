@@ -20,7 +20,6 @@ import builderb0y.bigglobe.math.pointSequences.AdditiveRecurrenceIterator2D;
 import builderb0y.bigglobe.math.pointSequences.BoundedPointIterator2D;
 import builderb0y.bigglobe.scripting.ScriptHolder;
 import builderb0y.scripting.parsing.ScriptParsingException;
-import builderb0y.scripting.parsing.input.ScriptUsage;
 import builderb0y.scripting.parsing.input.SourceScriptUsage;
 
 public class LocateCommand {

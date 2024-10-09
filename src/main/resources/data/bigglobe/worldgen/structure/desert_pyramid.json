@@ -1,5 +1,0 @@
-{
-	"type": "bigglobe:delegating",
-	"delegate": "minecraft:desert_pyramid",
-	"biomes": "#bigglobe:has_structure/desert_pyramid"
-}

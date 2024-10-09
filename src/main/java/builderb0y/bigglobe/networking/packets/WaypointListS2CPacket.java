@@ -62,7 +62,8 @@ public class WaypointListS2CPacket implements S2CPlayPacketHandler<List<SyncedWa
 		HAS_NAME = 1 << 1;
 
 	public void send(ServerPlayerEntity player) {
-		PlayerWaypointManager manager = ((WaypointTracker)(player)).bigglobe_getWaypointManager();
+		PlayerWaypointManager manager = PlayerWaypointManager.get(player);
+		if (manager == null) return;
 		PacketByteBuf buffer = this.buffer();
 
 		boolean isHyperspace = player.getWorld().getRegistryKey() == HyperspaceConstants.WORLD_KEY;
@@ -130,10 +131,12 @@ public class WaypointListS2CPacket implements S2CPlayPacketHandler<List<SyncedWa
 		ClientPlayerEntity player = MinecraftClient.getInstance().player;
 		if (player != null) {
 			EntityVersions.setPortalCooldown(player, 20);
-			PlayerWaypointManager manager = ((WaypointTracker)(player)).bigglobe_getWaypointManager();
-			manager.clear();
-			for (SyncedWaypointData waypoint : waypoints) {
-				manager.addWaypoint(waypoint.resolve(player), true);
+			PlayerWaypointManager manager = PlayerWaypointManager.get(player);
+			if (manager != null) {
+				manager.clear();
+				for (SyncedWaypointData waypoint : waypoints) {
+					manager.addWaypoint(waypoint.resolve(player), true);
+				}
 			}
 		}
 	}
