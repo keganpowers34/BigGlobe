@@ -36,6 +36,9 @@ repositories() {
 		}
 	}
 
+	maven { url "https://maven.shedaniel.me/" }
+    	maven { url "https://maven.terraformersmc.com/releases/" }
+
 	//manifold
 	maven() {
 		url('https://oss.sonatype.org/content/repositories/snapshots/')
@@ -71,8 +74,11 @@ dependencies() {
 	modImplementation "maven.modrinth:distanthorizons:2.2.1-a-1.21.1"
 	modImplementation "maven.modrinth:immersiveportals:v6.0.3-mc1.21.1"
 	modImplementation "maven.modrinth:sodium:mc1.21-0.5.11"
-	modImplementation "maven.modrinth:coth-config:15.0.140+fabric"
 	modImplementation "maven.modrinth:lambdynamiclights:2.3.4+1.20.4"
+
+	modApi("me.shedaniel.cloth:cloth-config-fabric:ABC") {
+        	exclude(group: "net.fabricmc.fabric-api")
+    	}
 
 	modCompileOnly   (fileTree(file("dependencies/$project.minecraft_version/compileOnly"   )))
 	modImplementation(fileTree(file("dependencies/$project.minecraft_version/implementation")))
