@@ -75,6 +75,8 @@ dependencies() {
 	modImplementation "maven.modrinth:immersiveportals:v6.0.3-mc1.21.1"
 	modImplementation "maven.modrinth:sodium:mc1.21-0.5.11"
 	modImplementation "maven.modrinth:lambdynamiclights:2.3.4+1.20.4"
+	modImplementation "maven.modrinth:satin-api:2.0.0"
+	modImplementation "maven.modrinth:modmenu:11.0.2"
 
 	modApi("me.shedaniel.cloth:cloth-config-fabric:15.0.140") {
         	exclude(group: "net.fabricmc.fabric-api")
