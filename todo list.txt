@@ -8,7 +8,7 @@ bugs:
 		which is stored in ServerNetworkingImpl.CONFIGURATIONS.
 	fabric fails to upgrade big globe worlds.
 		TaggedChoiceTypeMixin cancels a method with a Codec,
-		despite the fact that minecraft changed to using a MapCodec instead.
+		despite the fact that minecraft changed to using a MapCodec instead. balls
 
 testing:
 	cubic chunks compatibility, whenever that's released.
